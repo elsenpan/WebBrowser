@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController">
+            <connections>
+                <outlet property="btnBack" destination="Vt4-iJ-V6R" id="T7a-vr-A8F"/>
+                <outlet property="btnForward" destination="CA0-WC-472" id="alS-hM-jZb"/>
+                <outlet property="btnRefresh" destination="MEx-8q-lpv" id="Gt3-ei-6mT"/>
+                <outlet property="btnStop" destination="EC5-cb-cjD" id="lin-2e-izh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="Xel-8X-bDz" id="IDk-jF-gLG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xel-8X-bDz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                </webView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am3-vf-T42">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <items>
+                        <barButtonItem image="backbutton.png" id="Vt4-iJ-V6R">
+                            <connections>
+                                <action selector="goBack" destination="Xel-8X-bDz" id="AIX-DH-GNz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dqP-wZ-kQs"/>
+                        <barButtonItem systemItem="stop" id="EC5-cb-cjD">
+                            <connections>
+                                <action selector="stopLoading" destination="Xel-8X-bDz" id="1rA-pc-YOQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Qvf-6Z-O1g"/>
+                        <barButtonItem systemItem="refresh" id="MEx-8q-lpv">
+                            <connections>
+                                <action selector="reload" destination="Xel-8X-bDz" id="SiF-hR-gNy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="I4w-od-Xds"/>
+                        <barButtonItem image="forwardbutton.png" id="CA0-WC-472">
+                            <connections>
+                                <action selector="goForward" destination="Xel-8X-bDz" id="7e0-vP-kjX"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="am3-vf-T42" firstAttribute="top" secondItem="Xel-8X-bDz" secondAttribute="bottom" id="61v-Qc-TyO"/>
+                <constraint firstItem="Xel-8X-bDz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6I3-fe-sQU"/>
+                <constraint firstAttribute="bottom" secondItem="am3-vf-T42" secondAttribute="bottom" id="EcN-ta-vV0"/>
+                <constraint firstAttribute="trailing" secondItem="am3-vf-T42" secondAttribute="trailing" id="KIw-zW-cxt"/>
+                <constraint firstItem="Xel-8X-bDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PsG-IK-9de"/>
+                <constraint firstItem="am3-vf-T42" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zwo-wg-ODf"/>
+                <constraint firstAttribute="trailing" secondItem="Xel-8X-bDz" secondAttribute="trailing" id="akA-f6-kPQ"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backbutton.png" width="22" height="22"/>
+        <image name="forwardbutton.png" width="22" height="22"/>
+    </resources>
+</document>
